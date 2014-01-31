@@ -23,7 +23,7 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	sed -i -e 's/$(CC) -o/$(CC) $(LDFLAGS) -o/' Makefile || die
-	epatch "${FILESDIR}/${PN}-4.9c-ulm.patch"
+	epatch "${FILESDIR}/${P}-ulm.patch"
 }
 
 src_compile() {
