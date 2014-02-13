@@ -5,14 +5,13 @@
 EAPI=5
 
 EGIT_REPO_URI="git://repo.or.cz/conkeror.git"
-EGIT_BRANCH="gecko26-downloads-fix"
 
 inherit eutils git-r3 toolchain-funcs fdo-mime
 
 DESCRIPTION="A Mozilla-based web browser whose design is inspired by GNU Emacs"
 HOMEPAGE="http://conkeror.org/"
 # conkeror.png is derived from http://commons.wikimedia.org/wiki/File:Conker.jpg
-SRC_URI="http://dev.gentoo.org/~ulm/distfiles/conkeror.png"
+SRC_URI="http://dev.gentoo.org/~ulm/distfiles/${PN}.png"
 
 # CC-BY-SA-3.0 for conkeror.png
 LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 ) CC-BY-SA-3.0"
@@ -22,7 +21,7 @@ RDEPEND="|| ( >=www-client/firefox-5.0 >=www-client/firefox-bin-23.0 )"
 
 src_unpack() {
 	git-r3_src_unpack
-	cp "${DISTDIR}/conkeror.png" . || die
+	cp "${DISTDIR}/${PN}.png" . || die
 }
 
 src_compile() {
