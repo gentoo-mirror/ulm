@@ -4,6 +4,8 @@
 
 EAPI=5
 
+inherit check-reqs
+
 DESCRIPTION="Nalimov endgame tablebases for up to 5 pieces"
 HOMEPAGE="http://tablebase.sesse.net/"
 
@@ -37,6 +39,17 @@ IUSE="+tb5"
 RESTRICT="mirror"				# not on Gentoo mirrors
 
 S="${WORKDIR}"
+
+CHECKREQS_DISK_USR="7230M"
+CHECKREQS_DISK_BUILD="${CHECKREQS_DISK_USR}"
+
+pkg_pretend() {
+	use tb5 && check-reqs_pkg_pretend
+}
+
+pkg_setup() {
+	use tb5 && check-reqs_pkg_setup
+}
 
 src_unpack() { :; }
 
