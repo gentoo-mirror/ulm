@@ -1,0 +1,10 @@
+# ChangeLog for games-board/tablebase
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*tablebase-20121127 (27 Mar 2014)
+
+  27 Mar 2014; Ulrich Müller <ulm@gentoo.org> +tablebase-20121127.ebuild,
+  +metadata.xml:
+  Initial import. Ebuild contributed by me.
+
