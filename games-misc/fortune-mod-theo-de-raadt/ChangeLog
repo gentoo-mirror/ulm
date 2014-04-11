@@ -2,6 +2,13 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*fortune-mod-theo-de-raadt-20140406 (11 Apr 2014)
+
+  11 Apr 2014; Ulrich Müller <ulm@gentoo.org>
+  -fortune-mod-theo-de-raadt-20140306.ebuild,
+  +fortune-mod-theo-de-raadt-20140406.ebuild:
+  Version bump.
+
 *fortune-mod-theo-de-raadt-20140306 (09 Mar 2014)
 
   09 Mar 2014; Ulrich Müller <ulm@gentoo.org>
