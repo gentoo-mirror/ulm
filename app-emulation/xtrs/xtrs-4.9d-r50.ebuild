@@ -9,12 +9,12 @@ inherit eutils flag-o-matic toolchain-funcs readme.gentoo
 DESCRIPTION="Radio Shack TRS-80 emulator"
 HOMEPAGE="http://www.tim-mann.org/xtrs.html"
 SRC_URI="http://www.tim-mann.org/trs80/${P}.tar.gz
-	ldos? ( http://www.tim-mann.org/trs80/ld4-631.zip )"
+	ls-dos? ( http://www.tim-mann.org/trs80/ld4-631.zip )"
 
-LICENSE="xtrs ldos? ( freedist )"
+LICENSE="xtrs ls-dos? ( freedist )"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
-IUSE="ldos"
+IUSE="ls-dos"
 
 DEPEND="sys-libs/ncurses
 	sys-libs/readline
@@ -39,7 +39,7 @@ src_install() {
 	insinto /usr/share/xtrs/disks
 	doins cpmutil.dsk utility.dsk
 
-	if use ldos; then
+	if use ls-dos; then
 		doins "${WORKDIR}"/ld4-631.dsk
 		dosym disks/ld4-631.dsk /usr/share/xtrs/disk4p-0
 		dosym disks/utility.dsk /usr/share/xtrs/disk4p-1
