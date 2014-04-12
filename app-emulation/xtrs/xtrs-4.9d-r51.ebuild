@@ -9,7 +9,10 @@ inherit eutils flag-o-matic toolchain-funcs readme.gentoo
 DESCRIPTION="Radio Shack TRS-80 emulator"
 HOMEPAGE="http://www.tim-mann.org/xtrs.html"
 SRC_URI="http://www.tim-mann.org/trs80/${P}.tar.gz
-	ls-dos? ( http://www.tim-mann.org/trs80/ld4-631.zip )"
+	ls-dos? (
+		http://www.tim-mann.org/trs80/ld4-631.zip
+		http://dev.gentoo.org/~ulm/distfiles/ld4-631-1l.xdelta
+	)"
 
 LICENSE="xtrs ls-dos? ( freedist )"
 SLOT="0"
@@ -20,11 +23,15 @@ RDEPEND="sys-libs/ncurses
 	sys-libs/readline
 	>=x11-libs/libX11-1.0.0"
 DEPEND="${RDEPEND}
-	ls-dos? ( app-arch/unzip )"
+	ls-dos? ( app-arch/unzip dev-util/xdelta )"
 
 src_prepare() {
 	sed -i -e 's/$(CC) -o/$(CC) $(LDFLAGS) -o/' Makefile || die
 	epatch "${FILESDIR}/${P}-ulm.patch"
+	if use ls-dos; then
+		xdelta3 -dfs "${WORKDIR}"/ld4-631.dsk "${DISTDIR}"/ld4-631-1l.xdelta \
+			"${WORKDIR}"/ld4-631.dsk || die
+	fi
 }
 
 src_compile() {
