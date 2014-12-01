@@ -38,4 +38,7 @@ src_install() {
 	dosym {../../../../..,/etc}${dest}/Brsane4.ini
 	dosym {../../../../..,/etc}${dest}/brsanenetdevice4.cfg
 	dosym {../../../../..,/etc}${dest}/models4
+
+	insinto /etc/sane.d/dll.d
+	newins - ${PN} <<< "brother4"
 }
