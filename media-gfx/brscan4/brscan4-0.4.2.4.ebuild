@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit toolchain-funcs rpm
+inherit multilib rpm
 
 MY_P="${PN}-${PV%.*}-${PV##*.}"
 DESCRIPTION="Brother scanner driver"
