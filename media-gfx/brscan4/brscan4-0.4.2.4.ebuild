@@ -20,24 +20,28 @@ RESTRICT="strip"
 
 RDEPEND="media-gfx/sane-backends"
 
-S="${WORKDIR}"
+S="${WORKDIR}/opt/brother/scanner/${PN}"
 
 src_install() {
 	local lib=$(get_libdir)
-	local dest="/opt/brother/scanner/${PN}"
+	local dest=/opt/brother/scanner/${PN}
 
-	cp -r opt "${D}" || die
+	insinto /etc${dest}
+	doins Brsane4.ini brsanenetdevice4.cfg
+	doins -r models4
+	dosym /etc${dest}/Brsane4.ini ${dest}/Brsane4.ini
+	dosym /etc${dest}/brsanenetdevice4.cfg ${dest}/brsanenetdevice4.cfg
+	dosym /etc${dest}/models4 ${dest}/models4
 
 	into ${dest}
-	dolib.so usr/lib*/sane/libsane-brother4.so.1.0.7
+	dobin brsaneconfig4
+	dosym ${dest}/bin/brsaneconfig4 /usr/bin/brsaneconfig4
 
-	dosym {../../..${dest}/${lib},/usr/${lib}/sane}/libsane-brother4.so.1.0.7
+	dolib.so "${WORKDIR}"/usr/lib*/sane/libsane-brother4.so*
+	dosym ${dest}/${lib}/libsane-brother4.so.1.0.7 \
+		  /usr/${lib}/sane/libsane-brother4.so.1.0.7
 	dosym libsane-brother4.so.1.0.7 /usr/${lib}/sane/libsane-brother4.so.1
 	dosym libsane-brother4.so.1.0.7 /usr/${lib}/sane/libsane-brother4.so
-	dosym {../..${dest},/usr/bin}/brsaneconfig4
-	dosym {../../../../..,/etc}${dest}/Brsane4.ini
-	dosym {../../../../..,/etc}${dest}/brsanenetdevice4.cfg
-	dosym {../../../../..,/etc}${dest}/models4
 
 	insinto /etc/sane.d/dll.d
 	newins - ${PN} <<< "brother4"
