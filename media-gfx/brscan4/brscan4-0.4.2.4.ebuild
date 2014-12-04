@@ -18,7 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RESTRICT="strip"
 
-RDEPEND="media-gfx/sane-backends"
+RDEPEND="media-gfx/sane-backends
+	virtual/libusb:0"
 
 S="${WORKDIR}/opt/brother/scanner/${PN}"
 

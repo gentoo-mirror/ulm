@@ -3,6 +3,9 @@
 # $Header: $
 
   04 Dec 2014; Ulrich Müller <ulm@gentoo.org> brscan4-0.4.2.4.ebuild:
+  Add missing dependency on libusb.
+
+  04 Dec 2014; Ulrich Müller <ulm@gentoo.org> brscan4-0.4.2.4.ebuild:
   Fix some install locations and permission bits.
 
   01 Dec 2014; Ulrich Müller <ulm@gentoo.org> brscan4-0.4.2.4.ebuild:
