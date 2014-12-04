@@ -22,25 +22,39 @@ RESTRICT="strip"
 
 RDEPEND="net-print/cups"
 
-S="${WORKDIR}"
+S="${WORKDIR}/opt/brother/Printers/${MODEL}"
 
 src_prepare() {
 	if use metric; then
-		sed -i "/^PaperType/s/Letter/A4/" \
-			opt/brother/Printers/${MODEL}/inf/br${MODEL}rc || die
+		sed -i "/^PaperType/s/Letter/A4/" inf/br${MODEL}rc || die
 	fi
 }
 
 src_install() {
-	cp -r opt "${D}" || die
+	local dest=/opt/brother/Printers/${MODEL}
 
-	exeinto /opt/brother/Printers/${MODEL}/bin
-	doexe usr/bin/brprintconf_${MODEL}
-
-	dosym ../../../../opt/brother/Printers/${MODEL}/lpd/filter${MODEL} \
+	cd "${S}"/lpd || die
+	exeinto ${dest}/lpd
+	doexe br${MODEL}filter filter${MODEL} psconvertij2
+	dosym ${dest}/lpd/filter${MODEL} \
 		  /usr/libexec/cups/filter/brother_lpdwrapper_${MODEL}
-	dosym ../../../../opt/brother/Printers/${MODEL}/cupswrapper/brother_${MODEL}_printer_en.ppd \
+
+	cd "${S}"/inf || die
+	insinto ${dest}/inf
+	doins br${MODEL}func ImagingArea paperinfij2
+	doins -r lut
+	insinto /etc${dest}/inf
+	doins br${MODEL}rc			# config file
+	dosym /etc${dest}/inf/br${MODEL}rc ${dest}/inf/br${MODEL}rc
+
+	cd "${S}"/cupswrapper || die
+	insinto ${dest}/cupswrapper
+	doins brother_${MODEL}_printer_en.ppd
+	dosym ${dest}/cupswrapper/brother_${MODEL}_printer_en.ppd \
 		  /usr/share/cups/model/brother_${MODEL}_printer_en.ppd
-	dosym ../../opt/brother/Printers/${MODEL}/bin/brprintconf_${MODEL} \
-		  /usr/sbin/brprintconf_${MODEL}
+
+	# The brprintconf utility is very broken and mangles the path
+	# of the function list file. Therefore, don't install it.
+	#exeinto ${dest}/bin
+	#doexe "${WORKDIR}"/usr/bin/brprintconf_${MODEL}
 }
