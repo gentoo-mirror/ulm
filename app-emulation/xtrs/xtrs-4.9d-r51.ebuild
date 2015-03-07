@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -18,9 +18,10 @@ LICENSE="xtrs ls-dos? ( freedist )"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
 IUSE="ls-dos"
+RESTRICT="ls-dos? ( bindist )"
 
 RDEPEND="sys-libs/ncurses
-	sys-libs/readline
+	sys-libs/readline:0
 	>=x11-libs/libX11-1.0.0"
 DEPEND="${RDEPEND}
 	ls-dos? ( app-arch/unzip dev-util/xdelta:3 )"
