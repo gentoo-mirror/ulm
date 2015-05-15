@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit latex-package
+inherit eutils latex-package
 
 DESCRIPTION="The vc (version control) bundle"
 HOMEPAGE="https://www.ctan.org/pkg/vc"
@@ -17,6 +17,10 @@ KEYWORDS="~amd64 ~x86"
 DEPEND="app-arch/unzip"
 
 S="${WORKDIR}/${PN}"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-fix-git-date.patch
+}
 
 src_compile() { :; }
 
