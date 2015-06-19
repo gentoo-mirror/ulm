@@ -1,0 +1,13 @@
+# ChangeLog for dev-tex/vc
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 May 2015; Ulrich Müller <ulm@gentoo.org> vc-0.5.ebuild,
+  +files/vc-0.5-fix-git-date.patch:
+  Fix date information in git.
+
+*vc-0.5 (15 May 2015)
+
+  15 May 2015; Ulrich Müller <ulm@gentoo.org> +vc-0.5.ebuild, +metadata.xml:
+  Initial import. Ebuild contributed by me.
+
