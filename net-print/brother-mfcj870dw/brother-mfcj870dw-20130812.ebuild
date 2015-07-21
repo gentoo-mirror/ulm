@@ -51,7 +51,7 @@ src_install() {
 	insinto ${dest}/cupswrapper
 	doins brother_${MODEL}_printer_en.ppd
 	dosym ${dest}/cupswrapper/brother_${MODEL}_printer_en.ppd \
-		  /usr/share/cups/model/brother_${MODEL}_printer_en.ppd
+		  /usr/share/cups/model/Brother/brother_${MODEL}_printer_en.ppd
 
 	# The brprintconf utility is very broken and mangles the path
 	# of the function list file. Therefore, don't install it.
