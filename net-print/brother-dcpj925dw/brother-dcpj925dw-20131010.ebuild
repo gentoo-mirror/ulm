@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -51,7 +51,7 @@ src_install() {
 	insinto ${dest}/cupswrapper
 	doins brother_${MODEL}_printer_en.ppd
 	dosym ${dest}/cupswrapper/brother_${MODEL}_printer_en.ppd \
-		  /usr/share/cups/model/brother_${MODEL}_printer_en.ppd
+		  /usr/share/cups/model/Brother/brother_${MODEL}_printer_en.ppd
 
 	# The brprintconf utility is very broken and mangles the path
 	# of the function list file. Therefore, don't install it.
