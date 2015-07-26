@@ -2,6 +2,15 @@
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jul 2015; Ulrich Müller <ulm@gentoo.org> -brscan4-0.4.2.4.ebuild,
+  -brscan4-0.4.3.0.ebuild:
+  Remove old.
+
+*brscan4-0.4.3.1 (18 Jul 2015)
+
+  18 Jul 2015; Ulrich Müller <ulm@gentoo.org> +brscan4-0.4.3.1.ebuild:
+  Version bump.
+
 *brscan4-0.4.3.0 (04 Mar 2015)
 
   04 Mar 2015; Ulrich Müller <ulm@gentoo.org> +brscan4-0.4.3.0.ebuild:

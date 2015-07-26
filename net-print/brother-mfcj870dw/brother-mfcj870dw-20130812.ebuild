@@ -7,12 +7,12 @@ EAPI=5
 inherit rpm
 
 MODEL="${PN#*-}"
-PV_LPR="3.0.1-1"
+PV_LPR="3.0.0-1"
 PV_CUPSWRAPPER="3.0.0-1"
 
-DESCRIPTION="Brother printer driver for DCP-J925DW"
+DESCRIPTION="Brother printer driver for MFC-J870DW"
 HOMEPAGE="http://www.brother.com/"
-SRC_URI="http://download.brother.com/welcome/dlf005614/${MODEL}lpr-${PV_LPR}.i386.rpm http://download.brother.com/welcome/dlf005616/${MODEL}cupswrapper-${PV_CUPSWRAPPER}.i386.rpm"
+SRC_URI="http://download.brother.com/welcome/dlf006854/${MODEL}lpr-${PV_LPR}.i386.rpm http://download.brother.com/welcome/dlf006856/${MODEL}cupswrapper-${PV_CUPSWRAPPER}.i386.rpm"
 
 LICENSE="GPL-2+ Brother-lpr no-source-code"
 SLOT="0"
@@ -41,7 +41,7 @@ src_install() {
 
 	cd "${S}"/inf || die
 	insinto ${dest}/inf
-	doins br${MODEL}func ImagingArea paperinfij2
+	doins br${MODEL}func ImagingArea PaperDimension paperinfij2
 	doins -r lut
 	insinto /etc${dest}/inf
 	doins br${MODEL}rc			# config file
