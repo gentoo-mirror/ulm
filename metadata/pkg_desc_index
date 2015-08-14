@@ -1,0 +1,12 @@
+app-crypt/ifdokccid 3.9.0: Omnikey CardMan 3x21 PC/SC CCID driver
+app-emulation/xtrs 4.9d-r51: Radio Shack TRS-80 emulator
+dev-tex/vc 0.5: The vc (version control) bundle
+dev-vcs/git-merge-changelog 99999999: Git merge driver for GNU style ChangeLog files
+games-board/tablebase 20121127: Nalimov endgame tablebases for up to 5 pieces
+games-misc/fortune-mod-theo-de-raadt 20140406: Quotes from OpenBSD founder Theo de Raadt
+media-gfx/brscan4 0.4.3.1: Brother scanner driver
+net-misc/stunnel 3.26: TLS/SSL - Port Wrapper
+net-print/brother-dcpj925dw 20131010: Brother printer driver for DCP-J925DW
+net-print/brother-mfcj870dw 20130812: Brother printer driver for MFC-J870DW
+www-client/conkeror 9999: A Mozilla-based web browser whose design is inspired by GNU Emacs
+x11-plugins/whatsapp-purple 0.4.2: WhatsApp protocol implementation for libpurple (Pidgin)
