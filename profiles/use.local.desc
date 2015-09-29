@@ -3,6 +3,7 @@
 # * generated automatically using pmaint *
 
 app-emulation/xtrs:ls-dos - Install LS-DOS disk images for Model 4P
-games-board/tablebase:tb5 - Install 5 pieces tablebases
+games-board/egtb-nalimov:tb5 - Install 5 pieces tablebases
+games-board/egtb-syzygy:tb6 - Install 6 pieces tablebases
 net-print/brother-dcpj925dw:metric - Default to A4 paper size
 net-print/brother-mfcj870dw:metric - Default to A4 paper size
