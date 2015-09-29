@@ -4,7 +4,7 @@ dev-tex/vc 0.5: The vc (version control) bundle
 dev-vcs/git-merge-changelog 99999999: Git merge driver for GNU style ChangeLog files
 games-board/egtb-nalimov 20131213: Nalimov endgame tablebases for up to 5 pieces
 games-board/egtb-syzygy 20131213: Syzygy endgame tablebases for up to 6 pieces
-games-board/polyglot 1.4.70b: Chess engine Winboard/xboard to UCI protocol adapter
+games-board/polyglot 1.4.70b: Protocol adapter to run UCI chess engines under xboard
 games-misc/fortune-mod-theo-de-raadt 20140406: Quotes from OpenBSD founder Theo de Raadt
 media-gfx/brscan4 0.4.3.1: Brother scanner driver
 net-misc/stunnel 3.26: TLS/SSL - Port Wrapper
