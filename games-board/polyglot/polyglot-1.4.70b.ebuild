@@ -4,15 +4,16 @@
 
 EAPI=5
 
-DESCRIPTION="Chess engine Winboard/xboard to UCI protocol adapter"
+DESCRIPTION="Protocol adapter to run UCI chess engines under xboard"
 HOMEPAGE="http://hardy.uhasselt.be/Toga/"
-# Not entirely clear what the "b" stands for; it first appeared
-# in version 1.4w10UCIb6 following 1.4w10
+# not entirely clear what the "b" in the version stands for
 SRC_URI="http://hardy.uhasselt.be/Toga/polyglot-release/${P}.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+
+DOCS="AUTHORS ChangeLog TODO" # README* installed by build system
 
 src_configure() {
 	econf \

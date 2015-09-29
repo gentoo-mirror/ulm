@@ -2,6 +2,9 @@
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
 # $Id$
 
+  29 Sep 2015; Ulrich Müller <ulm@gentoo.org> polyglot-1.4.70b.ebuild:
+  Define DOCS explicitly to avoid installing them twice.
+
 *polyglot-1.4.70b (29 Sep 2015)
 
   29 Sep 2015; Ulrich Müller <ulm@gentoo.org> +polyglot-1.4.70b.ebuild,
