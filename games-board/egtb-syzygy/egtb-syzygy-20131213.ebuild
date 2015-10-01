@@ -67,7 +67,7 @@ pkg_setup() {
 src_unpack() { :; }
 
 src_install() {
-	insinto /usr/share/games/${PN}
+	insinto /usr/share/${PN}
 	doins "${DISTDIR}"/*.rtbw
 	doins "${DISTDIR}"/*.rtbz
 	newdoc "${DISTDIR}"/${P}-README README

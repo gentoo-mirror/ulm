@@ -54,7 +54,7 @@ pkg_setup() {
 src_unpack() { :; }
 
 src_install() {
-	insinto /usr/share/games/${PN}
+	insinto /usr/share/${PN}
 	doins "${DISTDIR}"/*.emd
 	newdoc "${DISTDIR}"/${P}-README README
 }
