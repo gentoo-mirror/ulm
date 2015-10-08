@@ -3,6 +3,9 @@
 # $Id$
 
   08 Oct 2015; Ulrich Müller <ulm@gentoo.org> egtb-syzygy-20131213.ebuild:
+  Calculation of SRC_URI refurbished.
+
+  08 Oct 2015; Ulrich Müller <ulm@gentoo.org> egtb-syzygy-20131213.ebuild:
   Check disk space for both settings of the tb6 flag.
 
   01 Oct 2015; Ulrich Müller <ulm@gentoo.org> egtb-syzygy-20131213.ebuild:
