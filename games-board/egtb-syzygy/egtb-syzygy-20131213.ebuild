@@ -53,15 +53,16 @@ RESTRICT="mirror"				# not on Gentoo mirrors
 
 S="${WORKDIR}"
 
-CHECKREQS_DISK_USR="151G"
-CHECKREQS_DISK_BUILD="${CHECKREQS_DISK_USR}"
-
 pkg_pretend() {
-	use tb6 && check-reqs_pkg_pretend
+	CHECKREQS_DISK_USR=$(usex tb6 "151G" "939M")
+	CHECKREQS_DISK_BUILD="${CHECKREQS_DISK_USR}"
+	check-reqs_pkg_pretend
 }
 
 pkg_setup() {
-	use tb6 && check-reqs_pkg_setup
+	CHECKREQS_DISK_USR=$(usex tb6 "151G" "939M")
+	CHECKREQS_DISK_BUILD="${CHECKREQS_DISK_USR}"
+	check-reqs_pkg_setup
 }
 
 src_unpack() { :; }
