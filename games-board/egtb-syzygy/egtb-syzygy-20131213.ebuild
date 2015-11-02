@@ -6,7 +6,7 @@ EAPI=5
 
 inherit check-reqs
 
-DESCRIPTION="Syzygy endgame tablebases for up to 6 pieces"
+DESCRIPTION="Syzygy chess endgame tablebases for up to 6 pieces"
 HOMEPAGE="http://tablebase.sesse.net/"
 
 tb345=()
@@ -68,8 +68,10 @@ pkg_setup() {
 src_unpack() { :; }
 
 src_install() {
+	local f
 	insinto /usr/share/${PN}
-	doins "${DISTDIR}"/*.rtbw
-	doins "${DISTDIR}"/*.rtbz
+	for f in ${A}; do
+		[[ ${f} = *.rtb[wz] ]] && echo "${DISTDIR}"/${f}
+	done | xargs doins
 	newdoc "${DISTDIR}"/${P}-README README
 }
