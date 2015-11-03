@@ -6,7 +6,7 @@ EAPI=5
 
 inherit check-reqs
 
-DESCRIPTION="Nalimov endgame tablebases for up to 5 pieces"
+DESCRIPTION="Nalimov chess endgame tablebases for up to 5 pieces"
 HOMEPAGE="http://tablebase.sesse.net/"
 
 tb34=()
@@ -58,7 +58,10 @@ pkg_setup() {
 src_unpack() { :; }
 
 src_install() {
+	local f
 	insinto /usr/share/${PN}
-	doins "${DISTDIR}"/*.emd
+	for f in ${A}; do
+		[[ ${f} = *.emd ]] && echo "${DISTDIR}"/${f}
+	done | xargs doins
 	newdoc "${DISTDIR}"/${P}-README README
 }
