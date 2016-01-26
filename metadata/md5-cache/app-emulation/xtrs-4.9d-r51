@@ -12,4 +12,4 @@ SLOT=0
 SRC_URI=http://www.tim-mann.org/trs80/xtrs-4.9d.tar.gz ls-dos? ( http://www.tim-mann.org/trs80/ld4-631.zip http://dev.gentoo.org/~ulm/distfiles/ld4-631l.xd3 )
 _eclass_exported_funcs=pkg_postinst:readme.gentoo src_prepare:- src_compile:- src_install:-
 _eclasses_=eutils	8982475656ba7ade9b3201397efbd612	flag-o-matic	85dc1eac3c64d8141374490ed64122e5	multilib	3972ca401cf7dbb430df9995f5d8d580	readme.gentoo	df3fc8fdaf5a519e7d48c83e7592c95f	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85
-_md5_=f4b8ab0258e69c5c793734c2a48a0396
+_md5_=09c850b59770eb63b2f2e889eed8246a
