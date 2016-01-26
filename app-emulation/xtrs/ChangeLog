@@ -1,6 +1,6 @@
 # ChangeLog for app-emulation/xtrs
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
+# $Id$
 
   07 Mar 2015; Ulrich Müller <ulm@gentoo.org> -xtrs-4.9d-r50.ebuild,
   xtrs-4.9d-r51.ebuild:
