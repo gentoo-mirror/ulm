@@ -1,6 +1,6 @@
 # ChangeLog for www-client/conkeror
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
+# $Id$
 
   13 Feb 2014; Ulrich Müller <ulm@gentoo.org> conkeror-9999.ebuild,
   files/conkeror.sh:
