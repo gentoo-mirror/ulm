@@ -1,12 +1,12 @@
 DEFINED_PHASES=compile configure install
 DEPEND=games-misc/fortune-mod
 DESCRIPTION=Quotes from OpenBSD founder Theo de Raadt
-EAPI=5
+EAPI=6
 HOMEPAGE=http://www.openbsd.org/cgi-bin/cvsweb/src/usr.bin/mg/theo.c
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=games-misc/fortune-mod
 SLOT=0
-SRC_URI=http://homepage.boetes.org/software/mg/mg-20140406.tar.gz
+SRC_URI=http://homepage.boetes.org/software/mg/mg-20160912.tar.gz
 _eclass_exported_funcs=src_configure:- src_compile:- src_install:-
-_md5_=38a9d881a14ea525d0de634f3876c445
+_md5_=1bfc5d074a76ce800b5a7eb76c65c15f
