@@ -1,13 +1,14 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit check-reqs
 
 DESCRIPTION="Syzygy chess endgame tablebases for up to 6 pieces"
-HOMEPAGE="http://tablebase.sesse.net/"
+HOMEPAGE="http://tablebase.sesse.net/
+	http://kirill-kryukov.com/chess/tablebases-online/"
 
 tb345=()
 tb6=()
@@ -31,8 +32,6 @@ for ((i=4; i>=0; i--)); do
 		done
 	done
 done
-
-SRC_URI="http://tablebase.sesse.net/README -> ${P}-README"
 for i in "${tb345[@]}"; do
 	SRC_URI+=" http://tablebase.sesse.net/syzygy/3-4-5/${i}.rtbw"
 	SRC_URI+=" http://tablebase.sesse.net/syzygy/3-4-5/${i}.rtbz"
@@ -49,9 +48,19 @@ LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="tb6"
-RESTRICT="mirror"				# not on Gentoo mirrors
+RESTRICT="mirror tb6? ( fetch )" # not on Gentoo mirrors
 
 S="${WORKDIR}"
+
+pkg_nofetch() {
+	local f
+	einfo "Due to their large size, fetching the Syzygy Endgame Tablebases"
+	einfo "via BitTorrent is recommended: http://oics.olympuschess.com/tracker/"
+	einfo "After downloading, place the following files in ${DISTDIR}:"
+	for f in ${A}; do
+		einfo "${f}"
+	done
+}
 
 pkg_pretend() {
 	CHECKREQS_DISK_USR=$(usex tb6 "151G" "939M")
@@ -73,5 +82,4 @@ src_install() {
 	for f in ${A}; do
 		[[ ${f} = *.rtb[wz] ]] && echo "${DISTDIR}"/${f}
 	done | xargs doins
-	newdoc "${DISTDIR}"/${P}-README README
 }
