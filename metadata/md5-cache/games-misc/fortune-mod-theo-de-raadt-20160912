@@ -9,4 +9,4 @@ RDEPEND=games-misc/fortune-mod
 SLOT=0
 SRC_URI=http://homepage.boetes.org/software/mg/mg-20160912.tar.gz
 _eclass_exported_funcs=src_configure:- src_compile:- src_install:-
-_md5_=1bfc5d074a76ce800b5a7eb76c65c15f
+_md5_=0864f4127f9f5ecd1343bcffdead4a49
