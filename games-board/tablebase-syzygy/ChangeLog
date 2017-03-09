@@ -1,0 +1,31 @@
+# ChangeLog for games-board/tablebase-syzygy
+# Copyright 1999-2017 Gentoo Foundation; Distributed under the GPL v2
+
+*tablebase-syzygy-0_pre20131213-r100 (09 Mar 2017)
+
+  09 Mar 2017; Ulrich Müller <ulm@gentoo.org>
+  tablebase-syzygy-0_pre20131213.ebuild,
+  +tablebase-syzygy-0_pre20131213-r100.ebuild:
+  Move 6-piece tables to a separate ebuild.
+
+*tablebase-syzygy-0_pre20131213 (09 Mar 2017)
+
+  09 Mar 2017; Ulrich Müller <ulm@gentoo.org>
+  -egtb-syzygy-20131213.ebuild, +tablebase-syzygy-0_pre20131213.ebuild:
+  Package move. Change to conventional versioning scheme.
+
+  08 Oct 2015; Ulrich Müller <ulm@gentoo.org> egtb-syzygy-20131213.ebuild:
+  Calculation of SRC_URI refurbished.
+
+  08 Oct 2015; Ulrich Müller <ulm@gentoo.org> egtb-syzygy-20131213.ebuild:
+  Check disk space for both settings of the tb6 flag.
+
+  01 Oct 2015; Ulrich Müller <ulm@gentoo.org> egtb-syzygy-20131213.ebuild:
+  Install under /usr/share/ instead of /usr/share/games/.
+
+*egtb-syzygy-20131213 (28 Sep 2015)
+
+  28 Sep 2015; Ulrich Müller <ulm@gentoo.org> +egtb-syzygy-20131213.ebuild,
+  +metadata.xml:
+  Initial import. Ebuild contributed by me.
+
