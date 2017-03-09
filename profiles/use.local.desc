@@ -3,6 +3,5 @@
 # * generated automatically using pmaint *
 
 games-board/tablebase-nalimov:5-pieces - Install 5 pieces tablebases
-games-board/tablebase-syzygy:6-pieces - Install tablebases for 6 pieces (huge!)
 net-print/brother-dcpj925dw:metric - Default to A4 paper size
 net-print/brother-mfcj870dw:metric - Default to A4 paper size
