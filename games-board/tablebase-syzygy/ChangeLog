@@ -1,5 +1,11 @@
-# ChangeLog for games-board/egtb-syzygy
-# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# ChangeLog for games-board/tablebase-syzygy
+# Copyright 1999-2017 Gentoo Foundation; Distributed under the GPL v2
+
+*tablebase-syzygy-0_pre20131213 (09 Mar 2017)
+
+  09 Mar 2017; Ulrich Müller <ulm@gentoo.org>
+  -egtb-syzygy-20131213.ebuild, +tablebase-syzygy-0_pre20131213.ebuild:
+  Package move. Change to conventional versioning scheme.
 
   08 Oct 2015; Ulrich Müller <ulm@gentoo.org> egtb-syzygy-20131213.ebuild:
   Calculation of SRC_URI refurbished.
