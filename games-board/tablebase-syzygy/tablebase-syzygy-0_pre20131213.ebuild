@@ -46,8 +46,10 @@ CHECKREQS_DISK_BUILD="${CHECKREQS_DISK_USR}"
 pkg_nofetch() {
 	einfo "Due to their large size, fetching the Syzygy Endgame Tablebases"
 	einfo "via BitTorrent is recommended: http://oics.olympuschess.com/tracker/"
-	einfo "After downloading, place all K*vK*.rtbw and K*vK*.rtbz files"
-	einfo "in ${DISTDIR} ($(echo ${A} | wc -w) files in total)."
+	einfo "After downloading, place all K*.rtbw and K*.rtbz files in"
+	einfo "${DISTDIR}."
+	einfo "(For the 6-pieces tablebases, there should be" \
+		  "$(echo ${A} | wc -w) files in total.)"
 }
 
 src_unpack() { :; }
