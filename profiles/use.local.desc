@@ -2,7 +2,7 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
-games-board/egtb-nalimov:tb5 - Install 5 pieces tablebases
-games-board/egtb-syzygy:tb6 - Install 6 pieces tablebases
+games-board/tablebase-nalimov:tb5 - Install 5 pieces tablebases
+games-board/tablebase-syzygy:tb6 - Install 6 pieces tablebases
 net-print/brother-dcpj925dw:metric - Default to A4 paper size
 net-print/brother-mfcj870dw:metric - Default to A4 paper size
