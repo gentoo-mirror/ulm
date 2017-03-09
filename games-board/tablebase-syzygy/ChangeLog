@@ -1,6 +1,13 @@
 # ChangeLog for games-board/tablebase-syzygy
 # Copyright 1999-2017 Gentoo Foundation; Distributed under the GPL v2
 
+*tablebase-syzygy-0_pre20131213-r100 (09 Mar 2017)
+
+  09 Mar 2017; Ulrich Müller <ulm@gentoo.org>
+  tablebase-syzygy-0_pre20131213.ebuild,
+  +tablebase-syzygy-0_pre20131213-r100.ebuild:
+  Move 6-piece tables to a separate ebuild.
+
 *tablebase-syzygy-0_pre20131213 (09 Mar 2017)
 
   09 Mar 2017; Ulrich Müller <ulm@gentoo.org>
