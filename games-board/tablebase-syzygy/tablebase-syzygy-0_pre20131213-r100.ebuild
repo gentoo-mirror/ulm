@@ -41,12 +41,12 @@ unset i j k m tb345
 LICENSE="public-domain" # machine-generated tables
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="tb6"
+IUSE="6-pieces"
 RESTRICT="mirror" # not on Gentoo mirrors
 
 # there is no use-conditional fetch restriction,
 # so depend on another slot of the same package instead
-PDEPEND="tb6? ( ~${CATEGORY}/${P}:tb6 )"
+PDEPEND="6-pieces? ( ~${CATEGORY}/${P}:nofetch )"
 
 S="${WORKDIR}"
 CHECKREQS_DISK_USR="939M"

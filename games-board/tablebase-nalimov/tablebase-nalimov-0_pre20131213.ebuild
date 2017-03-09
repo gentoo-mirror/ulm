@@ -27,7 +27,7 @@ for i in "${tb34[@]}"; do
 	SRC_URI+=" http://tablebase.sesse.net/3-4-5/${i}.nbw.emd"
 	SRC_URI+=" http://tablebase.sesse.net/3-4-5/${i}.nbb.emd"
 done
-SRC_URI+=" tb5? ("
+SRC_URI+=" 5-pieces? ("
 for i in "${tb5[@]}"; do
 	SRC_URI+=" http://tablebase.sesse.net/3-4-5/${i}.nbw.emd"
 	SRC_URI+=" http://tablebase.sesse.net/3-4-5/${i}.nbb.emd"
@@ -38,7 +38,7 @@ unset i j k m tb34 tb5
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+tb5"
+IUSE="+5-pieces"
 RESTRICT="mirror"				# not on Gentoo mirrors
 
 S="${WORKDIR}"
@@ -47,11 +47,11 @@ CHECKREQS_DISK_USR="7230M"
 CHECKREQS_DISK_BUILD="${CHECKREQS_DISK_USR}"
 
 pkg_pretend() {
-	use tb5 && check-reqs_pkg_pretend
+	use 5-pieces && check-reqs_pkg_pretend
 }
 
 pkg_setup() {
-	use tb5 && check-reqs_pkg_setup
+	use 5-pieces && check-reqs_pkg_setup
 }
 
 src_unpack() { :; }
