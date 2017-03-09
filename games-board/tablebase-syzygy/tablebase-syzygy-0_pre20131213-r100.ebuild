@@ -42,9 +42,8 @@ LICENSE="public-domain" # machine-generated tables
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="6-pieces"
-RESTRICT="mirror" # not on Gentoo mirrors
 
-# there is no use-conditional fetch restriction,
+# there is no use-conditional mirror restriction,
 # so depend on another slot of the same package instead
 PDEPEND="6-pieces? ( ~${CATEGORY}/${P}:nofetch )"
 
