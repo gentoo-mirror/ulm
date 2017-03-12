@@ -1,6 +1,13 @@
 # ChangeLog for games-board/tablebase-nalimov
 # Copyright 1999-2017 Gentoo Foundation; Distributed under the GPL v2
 
+*tablebase-nalimov-0_pre20131213-r100 (12 Mar 2017)
+
+  12 Mar 2017; Ulrich Müller <ulm@gentoo.org>
+  tablebase-nalimov-0_pre20131213.ebuild,
+  +tablebase-nalimov-0_pre20131213-r100.ebuild, metadata.xml:
+  Include 6-pieces tablebases.
+
   09 Mar 2017; Ulrich Müller <ulm@gentoo.org>
   tablebase-nalimov-0_pre20131213.ebuild, metadata.xml:
   Rename the tb5 use flag to 5-pieces.
