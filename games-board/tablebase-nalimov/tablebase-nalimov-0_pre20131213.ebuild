@@ -73,13 +73,13 @@ RDEPEND="~${CATEGORY}/${P}:0"
 S="${WORKDIR}"
 
 pkg_pretend() {
-	CHECKREQS_DISK_USR=$(usex 6-pieces "1150G" "7200M")
+	CHECKREQS_DISK_USR=$(usex 6-pieces "1155G" "7200M")
 	CHECKREQS_DISK_BUILD="${CHECKREQS_DISK_USR}"
 	check-reqs_pkg_pretend
 }
 
 pkg_setup() {
-	CHECKREQS_DISK_USR=$(usex 6-pieces "1150G" "7200M")
+	CHECKREQS_DISK_USR=$(usex 6-pieces "1155G" "7200M")
 	CHECKREQS_DISK_BUILD="${CHECKREQS_DISK_USR}"
 	check-reqs_pkg_setup
 }
@@ -94,7 +94,7 @@ pkg_nofetch() {
 	einfo "   3, 4 pieces:    70 files    30 MiB"
 	einfo "   5 pieces:      220 files  7200 MiB"
 	einfo "   6 pieces:     2512 files  1147 GiB"
-	einfo "   Total:        2802 files  1154 GiB"
+	einfo "   Total:        2802 files  1155 GiB"
 }
 
 src_unpack() { :; }
