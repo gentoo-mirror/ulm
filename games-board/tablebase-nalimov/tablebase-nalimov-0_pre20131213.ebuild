@@ -31,8 +31,8 @@ for ((i=4; i>=0; i--)); do
 	done
 done
 
-# table of (number of files -1) for each 6-pieces set, in the same order
-# as the list was created above
+# table of (number of files - 1) for each 6-pieces set, in the same
+# order as the list was created above
 nfiles=([7]=3 3 [25]=3 3 [35]=3 4 [41]=3 3 [51]=3 4 [55]=3 3 [65]=3 4
 	[69]=3 3 3 4 3 4 3 4 2 3 [84]=15 14 [92]=7 7 [102]=3 4 [108]=7 7
 	[118]=7 8 [122]=7 7 [132]=7 8 3 2 14 15 7 8 7 8 7 8 5 6 [149]=15 14
