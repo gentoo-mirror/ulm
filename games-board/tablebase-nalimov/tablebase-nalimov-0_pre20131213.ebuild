@@ -88,7 +88,7 @@ pkg_nofetch() {
 	einfo "Due to their large size, fetching the Nalimov Endgame Tablebases"
 	einfo "via file sharing is recommended:"
 	einfo "http://kirill-kryukov.com/chess/tablebases-online/"
-	einfo "After fetching, place all k*.emd files in ${DISTDIR}."
+	einfo "After fetching, place all k*.emd files in your DISTDIR directory."
 	einfo
 	einfo "Total number and size of files should be as follows:"
 	einfo "   3, 4 pieces:    70 files    30 MiB"
