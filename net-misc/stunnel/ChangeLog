@@ -1,9 +1,0 @@
-# ChangeLog for net-misc/stunnel
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-
-*stunnel-3.26 (29 Aug 2014)
-
-  29 Aug 2014; Ulrich Müller <ulm@gentoo.org> +stunnel-3.26.ebuild,
-  +files/stunnel-3.26-gentoo.diff, +metadata.xml:
-  Copied from Portage tree.
-
