@@ -1,9 +1,9 @@
 DEFINED_PHASES=prepare unpack
-DEPEND=>=dev-vcs/git-1.8.2.1
+DEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=Git merge driver for GNU style ChangeLog files
 EAPI=5
 HOMEPAGE=http://www.gnu.org/software/gnulib/
 LICENSE=GPL-3+
 SLOT=0
-_eclasses_=git-r3	af51ccfceeb403ab80f1bf9209d372c8
+_eclasses_=git-r3	8f6de46b0aa318aea0e8cac62ece098b
 _md5_=109e52b13434b2ccfcc6b23176e01317
