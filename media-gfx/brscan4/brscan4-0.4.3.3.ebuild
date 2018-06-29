@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -37,8 +37,10 @@ src_install() {
 	dobin brsaneconfig4
 	dosym ${dest}/bin/brsaneconfig4 /usr/bin/brsaneconfig4
 
-	dolib.so "${WORKDIR}"/usr/lib*/sane/libsane-brother4.so*
-	dosym ${dest}/${lib}/libsane-brother4.so.1.0.7 \
+	dolib.so "${WORKDIR}"/usr/lib*/sane/libsane-brother4.so.1.0.7
+	dosym libsane-brother4.so.1.0.7 ${dest}/libsane-brother4.so.1
+	dosym libsane-brother4.so.1.0.7 ${dest}/libsane-brother4.so
+	dosym ../../..${dest}/${lib}/libsane-brother4.so.1.0.7 \
 		  /usr/${lib}/sane/libsane-brother4.so.1.0.7
 	dosym libsane-brother4.so.1.0.7 /usr/${lib}/sane/libsane-brother4.so.1
 	dosym libsane-brother4.so.1.0.7 /usr/${lib}/sane/libsane-brother4.so
