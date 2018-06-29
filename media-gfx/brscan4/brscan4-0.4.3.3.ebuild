@@ -38,8 +38,8 @@ src_install() {
 	dosym ${dest}/bin/brsaneconfig4 /usr/bin/brsaneconfig4
 
 	dolib.so "${WORKDIR}"/usr/lib*/sane/libsane-brother4.so.1.0.7
-	dosym libsane-brother4.so.1.0.7 ${dest}/libsane-brother4.so.1
-	dosym libsane-brother4.so.1.0.7 ${dest}/libsane-brother4.so
+	dosym libsane-brother4.so.1.0.7 ${dest}/${lib}/libsane-brother4.so.1
+	dosym libsane-brother4.so.1.0.7 ${dest}/${lib}/libsane-brother4.so
 	dosym ../../..${dest}/${lib}/libsane-brother4.so.1.0.7 \
 		  /usr/${lib}/sane/libsane-brother4.so.1.0.7
 	dosym libsane-brother4.so.1.0.7 /usr/${lib}/sane/libsane-brother4.so.1
