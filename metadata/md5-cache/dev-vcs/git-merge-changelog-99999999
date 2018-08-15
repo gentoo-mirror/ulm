@@ -5,5 +5,5 @@ EAPI=5
 HOMEPAGE=http://www.gnu.org/software/gnulib/
 LICENSE=GPL-3+
 SLOT=0
-_eclasses_=git-r3	8f6de46b0aa318aea0e8cac62ece098b
+_eclasses_=git-r3	918d6a744039c29af2cadc7317459765
 _md5_=109e52b13434b2ccfcc6b23176e01317
