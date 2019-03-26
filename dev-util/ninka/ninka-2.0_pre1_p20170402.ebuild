@@ -15,7 +15,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
-RDEPEND="dev-perl/IO-CaptureOutput"
+RDEPEND="dev-perl/DBD-SQLite
+	dev-perl/DBI
+	virtual/perl-File-Temp
+	dev-perl/IO-CaptureOutput
+	dev-perl/Spreadsheet-WriteExcel"
 
 DEPEND="virtual/perl-ExtUtils-MakeMaker
 	test? (
