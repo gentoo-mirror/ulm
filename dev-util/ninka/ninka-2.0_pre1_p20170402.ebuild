@@ -13,8 +13,17 @@ SRC_URI="https://dev.gentoo.org/~ulm/distfiles/${P}.tar.xz"
 LICENSE="GPL-2+ myspell-en_CA-KevinAtkinson public-domain Princeton Ispell"
 SLOT="0"
 KEYWORDS="~amd64"
+IUSE="test"
 
 RDEPEND="dev-perl/IO-CaptureOutput"
+
+DEPEND="virtual/perl-ExtUtils-MakeMaker
+	test? (
+		${RDEPEND}
+		virtual/perl-Test-Simple
+		dev-perl/Test-Pod
+	)"
+# Test::Strict not packaged yet
 
 S="${WORKDIR}/${PN}"
 
