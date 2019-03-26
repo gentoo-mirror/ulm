@@ -1,0 +1,22 @@
+--- ninka-orig/comments/Makefile
++++ ninka/comments/Makefile
+@@ -11,12 +11,13 @@
+ #DEBUG = -g -DDEBUG -DIODEBUG
+ 
+ 
+-all:
+-	g++ $(DEBUG) $(OPTIONS) $(DEFINES) -c io.cpp
+-	g++ $(DEBUG) $(OPTIONS) $(DEFINES) -c dformat.cpp
+-	g++ $(DEBUG) $(OPTIONS) $(DEFINES) -c func.cpp
+-	g++ $(DEBUG) $(OPTIONS) $(DEFINES) -c main.cpp
+-	g++ -o $(NAME) main.o io.o dformat.o func.o
++all: $(NAME)
++
++%.o: %.cpp
++	$(CXX) $(CXXFLAGS) $(DEFINES) -c $<
++
++$(NAME): main.o io.o dformat.o func.o
++	$(CXX) $(LDFLAGS) -o $@ $^
+ 
+ install:
+ 	@echo -n "Installing binary:   "
