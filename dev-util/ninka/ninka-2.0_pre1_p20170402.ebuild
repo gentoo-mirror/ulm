@@ -13,13 +13,15 @@ SRC_URI="https://dev.gentoo.org/~ulm/distfiles/${P}.tar.xz"
 LICENSE="GPL-2+ myspell-en_CA-KevinAtkinson public-domain Princeton Ispell"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="test"
+IUSE="sqlite test"
 
-RDEPEND="dev-perl/DBD-SQLite
-	dev-perl/DBI
+RDEPEND="dev-perl/IO-CaptureOutput
+	dev-perl/Spreadsheet-WriteExcel
 	virtual/perl-File-Temp
-	dev-perl/IO-CaptureOutput
-	dev-perl/Spreadsheet-WriteExcel"
+	sqlite? (
+		dev-perl/DBD-SQLite
+		dev-perl/DBI
+	)"
 
 DEPEND="virtual/perl-ExtUtils-MakeMaker
 	test? (
@@ -43,6 +45,7 @@ src_compile() {
 
 src_install() {
 	perl-module_src_install
+	use sqlite || rm "${ED}"/usr/bin/ninka-sqlite || die
 	dobin comments/comments
 	doman comments/comments.1
 	dodoc BUGS.org
