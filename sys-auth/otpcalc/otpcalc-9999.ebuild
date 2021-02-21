@@ -3,27 +3,19 @@
 
 EAPI=7
 
-inherit git-r3 meson
+inherit git-r3 meson xdg
 
-DESCRIPTION="A One Time Password and S/Key calculator for X"
-HOMEPAGE="http://www.killa.net/infosec/otpCalc/"
+DESCRIPTION="A One Time Password and S/Key calculator for GTK+"
+HOMEPAGE="http://www.killa.net/infosec/otpCalc/
+	https://gitlab.com/ulm/otpcalc"
+#SRC_URI="https://gitlab.com/ulm/${PN}/-/archive/${PV}/${P}.tar.bz2"
 EGIT_REPO_URI="https://gitlab.com/ulm/otpcalc.git"
 
-LICENSE="GPL-2+" # bundled crypto functions are not used
+LICENSE="GPL-2+"
 SLOT="0"
+#KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 
 RDEPEND="dev-libs/openssl:0=
 	x11-libs/gtk+:3"
 DEPEND="${RDEPEND}"
 BDEPEND="virtual/pkgconfig"
-
-src_configure() {
-	local emesonargs=( -Dlibcrypto=enabled )
-	meson_src_configure
-}
-
-src_install() {
-	meson_src_install
-	dosym otpCalc /usr/bin/otpcalc
-	newman - otpcalc.1 <<< ".so man1/otpCalc.1"
-}
