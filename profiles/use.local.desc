@@ -4,5 +4,4 @@
 
 games-board/tablebase-nalimov:5-pieces - Install tablebases for 5 pieces
 games-board/tablebase-nalimov:6-pieces - Install tablebases for 6 pieces (huge!)
-net-print/brother-dcpj925dw:metric - Default to A4 paper size
 net-print/brother-mfcj870dw:metric - Default to A4 paper size
