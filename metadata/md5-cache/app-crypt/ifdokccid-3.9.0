@@ -10,5 +10,5 @@ RDEPEND=sys-apps/pcsc-lite virtual/libusb:1
 RESTRICT=fetch bindist
 SLOT=0
 SRC_URI=amd64? ( ifdokccid_lnx_x64-3.9.0.tar.gz ) x86? ( ifdokccid_lnx_i686-3.9.0.tar.gz )
-_eclasses_=toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	multilib	97566c1a256d07b00848aa767e38a352	udev	26207b5d4f4708920b9fcb7302d94068
+_eclasses_=toolchain-funcs	9ea1c67b6f8315fdc2568abb674519aa	multilib	97566c1a256d07b00848aa767e38a352	udev	0a92682c0f65a60d01453db598fc6490
 _md5_=02edf256176c4de6b5ce6c0fb9169db8
