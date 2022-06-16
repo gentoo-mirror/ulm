@@ -1,21 +1,23 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
 inherit check-reqs
 
 DESCRIPTION="Nalimov chess endgame tablebases for up to 6 pieces"
 HOMEPAGE="http://tablebase.sesse.net/
-	http://kirill-kryukov.com/chess/tablebases-online/"
+	https://kirill-kryukov.com/chess/tablebases-online/"
 
-tb5=()
+tb345=()
 tb6=()
 m=(p n b r q k)
 for ((i=4; i>=0; i--)); do
+	tb345+=(k${m[i]}k.nb{w,b}) # 2+1
 	for ((j=i; j>=0; j--)); do
+		tb345+=(k${m[i]}k${m[j]}.nb{w,b} k${m[i]}${m[j]}k.nb{w,b}) # 2+2, 3+1
 		for ((k=4; k>=0; k--)); do
-			tb5+=(k${m[i]}${m[j]}k${m[k]}.nb{w,b}) # 3+2
+			tb345+=(k${m[i]}${m[j]}k${m[k]}.nb{w,b}) # 3+2
 			((k<=i)) || continue
 			for ((l=k; l>=0; l--)); do
 				((k<i || l<=j)) || continue
@@ -23,7 +25,7 @@ for ((i=4; i>=0; i--)); do
 				((k!=i || l!=j)) && tb6+=(k${m[i]}${m[j]}k${m[k]}${m[l]}.nbb)
 			done
 			((k<=j)) || continue
-			tb5+=(k${m[i]}${m[j]}${m[k]}k.nb{w,b}) # 4+1
+			tb345+=(k${m[i]}${m[j]}${m[k]}k.nb{w,b}) # 4+1
 			for ((l=4; l>=0; l--)); do
 				tb6+=(k${m[i]}${m[j]}${m[k]}k${m[l]}.nb{w,b}) # 4+2
 			done
@@ -59,27 +61,28 @@ for ((i=0; i<${#tb6[@]}; i++)); do
 	fi
 done
 
-SRC_URI="${tb5[@]/%/.emd} 6-pieces? ( ${tb6n[@]/%/.emd} )"
-unset i j k l m nfiles s tb5 tb6 tb6n
+SRC_URI="${tb345[@]/%/.emd}
+	6-pieces? ( ${tb6n[@]/%/.emd} )"
+unset i j k l m nfiles s tb345 tb6 tb6n
+
+S="${WORKDIR}"
 
 LICENSE="public-domain" # machine-generated tables
-SLOT="nofetch"
+SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="6-pieces"
 RESTRICT="fetch"
 
-RDEPEND="~${CATEGORY}/${P}:0"
-
-S="${WORKDIR}"
+RDEPEND="!${CATEGORY}/${PN}:nofetch"
 
 pkg_pretend() {
-	CHECKREQS_DISK_USR=$(usex 6-pieces "1155G" "7200M")
+	CHECKREQS_DISK_USR="$(usex 6-pieces 1155G 7230M)"
 	CHECKREQS_DISK_BUILD="${CHECKREQS_DISK_USR}"
 	check-reqs_pkg_pretend
 }
 
 pkg_setup() {
-	CHECKREQS_DISK_USR=$(usex 6-pieces "1155G" "7200M")
+	CHECKREQS_DISK_USR="$(usex 6-pieces 1155G 7230M)"
 	CHECKREQS_DISK_BUILD="${CHECKREQS_DISK_USR}"
 	check-reqs_pkg_setup
 }
@@ -103,6 +106,6 @@ src_install() {
 	local f
 	insinto /usr/share/${PN}
 	for f in ${A}; do
-		[[ ${f} = *.emd ]] && echo "${DISTDIR}"/${f}
+		[[ ${f} == *.emd ]] && echo "${DISTDIR}"/${f}
 	done | xargs doins
 }
