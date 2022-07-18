@@ -1,11 +1,11 @@
 DEFINED_PHASES=compile configure install
 DEPEND=games-misc/fortune-mod
 DESCRIPTION=Quotes from OpenBSD founder Theo de Raadt
-EAPI=6
-HOMEPAGE=http://www.openbsd.org/cgi-bin/cvsweb/src/usr.bin/mg/theo.c
+EAPI=8
+HOMEPAGE=https://github.com/hboetes/mg/commit/e895fcbdb9c69bb60ebe4e2a71014fd734242d6e
 KEYWORDS=~amd64 ~x86
 LICENSE=BSD
 RDEPEND=games-misc/fortune-mod
 SLOT=0
-SRC_URI=http://homepage.boetes.org/software/mg/mg-20160912.tar.gz
-_md5_=0864f4127f9f5ecd1343bcffdead4a49
+SRC_URI=https://dev.gentoo.org/~ulm/distfiles/mg-20160912.tar.gz
+_md5_=c3902c8f946f7e027e3a861e04f27240
