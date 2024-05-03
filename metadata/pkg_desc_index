@@ -1,3 +1,4 @@
+dev-tex/gentoo-newage 0.1: Font for Gentoo e.V. logo
 dev-vcs/git-merge-changelog 99999999: Git merge driver for GNU style ChangeLog files
 games-board/tablebase-nalimov 0_pre20131213-r101: Nalimov chess endgame tablebases for up to 6 pieces
 games-misc/fortune-mod-theo-de-raadt 20160912: Quotes from OpenBSD founder Theo de Raadt
