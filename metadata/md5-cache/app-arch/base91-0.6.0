@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=Convert binary data to ASCII text
+EAPI=8
+HOMEPAGE=https://base91.sourceforge.net/
+INHERIT=toolchain-funcs
+KEYWORDS=~amd64
+LICENSE=BSD
+SLOT=0
+SRC_URI=https://downloads.sourceforge.net/project/base91/basE91/0.6.0/base91-0.6.0.tar.gz
+_eclasses_=toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0
+_md5_=26b748e6170f060d5f4254902a75f645
