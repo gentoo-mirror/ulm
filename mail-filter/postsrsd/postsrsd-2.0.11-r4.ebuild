@@ -13,12 +13,13 @@ SRC_URI="https://github.com/roehling/postsrsd/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="GPL-3 BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="sqlite test"
+IUSE="redis sqlite test"
 RESTRICT="!test? ( test )"
 
 RDEPEND="acct-user/postsrsd
 	dev-libs/confuse:=
-	sqlite? ( dev-db/sqlite )"
+	redis? ( dev-libs/hiredis:= )
+	sqlite? ( dev-db/sqlite:3 )"
 
 DEPEND="${RDEPEND}
 	test? ( dev-libs/check )"
@@ -54,7 +55,7 @@ src_configure() {
 		# "Note that the Milter code is less tested and should be
 		# considered experimental for now and not ready for production."
 		-DWITH_MILTER=OFF
-		-DWITH_REDIS=OFF
+		-DWITH_REDIS=$(usex redis)
 		-DWITH_SQLITE=$(usex sqlite)
 	)
 
