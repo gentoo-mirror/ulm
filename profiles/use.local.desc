@@ -3,6 +3,4 @@
 # * generated automatically using pmaint *
 
 games-board/tablebase-nalimov:6-pieces - Install tablebases for 6 pieces (huge!)
-mail-filter/postsrsd:redis - Add support for dev-libs/hiredis database backend
-mail-filter/postsrsd:sqlite - Add support for dev-db/sqlite database backend
 net-print/brother-mfcj870dw:metric - Default to A4 paper size
